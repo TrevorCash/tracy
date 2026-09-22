@@ -171,7 +171,7 @@ if(VENDOR_GUI)
     # ImGui
 
     CPMAddPackage(
-        NAME ImGui
+        NAME TracyImGui
         GITHUB_REPOSITORY ocornut/imgui
         GIT_TAG v1.92.9b-docking
         DOWNLOAD_ONLY TRUE
@@ -194,10 +194,10 @@ if(VENDOR_GUI)
         backends/imgui_impl_opengl3.cpp
     )
 
-    list(TRANSFORM IMGUI_SOURCES PREPEND "${ImGui_SOURCE_DIR}/")
+    list(TRANSFORM IMGUI_SOURCES PREPEND "${TracyImGui_SOURCE_DIR}/")
 
     add_library(TracyImGui STATIC EXCLUDE_FROM_ALL ${IMGUI_SOURCES})
-    target_include_directories(TracyImGui PUBLIC ${ImGui_SOURCE_DIR})
+    target_include_directories(TracyImGui PUBLIC ${TracyImGui_SOURCE_DIR})
     target_link_libraries(TracyImGui PUBLIC
         TracyFreetype
         ${CMAKE_DL_LIBS}

@@ -276,7 +276,7 @@ elseif(EMSCRIPTEN)
 else()
     set(PROFILER_FILES ${PROFILER_FILES}
         src/BackendGlfw.cpp
-        ${ImGui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
+        ${TracyImGui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
     )
 endif()
 
